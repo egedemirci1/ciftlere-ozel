@@ -30,28 +30,27 @@ export default function HomePage() {
     }`}>
       <Navigation />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Dashboard Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2 sm:mb-4 px-2">
             Hoş Geldin! Ahu & Yaman
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-3">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-3 px-2">
             Aşkımızın Merkezi
           </p>
         </div>
 
-
-        {/* Dashboard Grid - 2 satır 3 sütun + 3. sütun 3 satır */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Mobilde: Tek sütun */}
-          <div className="lg:hidden space-y-6">
+        {/* Dashboard Grid - Responsive Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+          {/* Mobile & Tablet Layout */}
+          <div className="lg:hidden space-y-4 sm:space-y-6">
             <MovieOfDay />
-            <MemoryAnniversaries />
             <SongOfDay />
+            <MemoryAnniversaries />
             <UpcomingAnniversaries />
-            <RecentLetters />
             <CitySuggestions />
+            <RecentLetters />
             <Stats />
           </div>
 

@@ -40,21 +40,21 @@ export default function SettingsPage() {
     }`}>
       <Navigation />
       
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">
+      <main className="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2 sm:mb-4 px-2">
             Ayarlar
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 px-2">
             Uygulamanızı kişiselleştirin
           </p>
         </div>
 
         <Tabs defaultValue="appearance" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="appearance">Görünüm</TabsTrigger>
-            <TabsTrigger value="storage">Depolama</TabsTrigger>
-            <TabsTrigger value="data">Veri</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 h-8 sm:h-10">
+            <TabsTrigger value="appearance" className="text-xs sm:text-sm">Görünüm</TabsTrigger>
+            <TabsTrigger value="storage" className="text-xs sm:text-sm">Depolama</TabsTrigger>
+            <TabsTrigger value="data" className="text-xs sm:text-sm">Veri</TabsTrigger>
           </TabsList>
           
           <TabsContent value="appearance" className="space-y-6">
@@ -79,30 +79,30 @@ export default function SettingsPage() {
                     Uygulamanızın görünümünü kişiselleştirin
                   </p>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {/* Green Theme */}
                     <div 
-                      className={`relative p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
+                      className={`relative p-3 sm:p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
                         theme === 'green-theme' 
                           ? 'border-green-500 bg-green-50' 
                           : 'border-gray-200 bg-white hover:border-green-300'
                       }`}
                       onClick={() => changeTheme('green-theme')}
                     >
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-4 h-4 rounded-full bg-green-500"></div>
-                          <span className="font-medium text-gray-800">Yeşil Tema</span>
+                      <div className="flex items-center justify-between mb-2 sm:mb-3">
+                        <div className="flex items-center space-x-1 sm:space-x-2">
+                          <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500"></div>
+                          <span className="font-medium text-gray-800 text-sm sm:text-base">Yeşil Tema</span>
                         </div>
                         {theme === 'green-theme' && (
-                          <Check className="h-5 w-5 text-green-500" />
+                          <Check className="h-4 w-4 sm:h-5 sm:w-5 text-green-500" />
                         )}
                       </div>
-                      <div className="space-y-2">
+                      <div className="space-y-1 sm:space-y-2">
                         <div className="flex space-x-1">
-                          <div className="w-3 h-3 rounded bg-green-400"></div>
-                          <div className="w-3 h-3 rounded bg-green-500"></div>
-                          <div className="w-3 h-3 rounded bg-green-600"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded bg-green-400"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded bg-green-500"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded bg-green-600"></div>
                         </div>
                         <p className="text-xs text-gray-600">
                           Doğal ve sakin bir görünüm
@@ -112,27 +112,27 @@ export default function SettingsPage() {
 
                     {/* Pink Theme */}
                     <div 
-                      className={`relative p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
+                      className={`relative p-3 sm:p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 ${
                         theme === 'pink-theme' 
                           ? 'border-pink-500 bg-pink-50' 
                           : 'border-gray-200 bg-white hover:border-pink-300'
                       }`}
                       onClick={() => changeTheme('pink-theme')}
                     >
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-4 h-4 rounded-full bg-pink-500"></div>
-                          <span className="font-medium text-gray-800">Pembe Tema</span>
+                      <div className="flex items-center justify-between mb-2 sm:mb-3">
+                        <div className="flex items-center space-x-1 sm:space-x-2">
+                          <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-pink-500"></div>
+                          <span className="font-medium text-gray-800 text-sm sm:text-base">Pembe Tema</span>
                         </div>
                         {theme === 'pink-theme' && (
-                          <Check className="h-5 w-5 text-pink-500" />
+                          <Check className="h-4 w-4 sm:h-5 sm:w-5 text-pink-500" />
                         )}
                       </div>
-                      <div className="space-y-2">
+                      <div className="space-y-1 sm:space-y-2">
                         <div className="flex space-x-1">
-                          <div className="w-3 h-3 rounded bg-pink-400"></div>
-                          <div className="w-3 h-3 rounded bg-pink-500"></div>
-                          <div className="w-3 h-3 rounded bg-pink-600"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded bg-pink-400"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded bg-pink-500"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded bg-pink-600"></div>
                         </div>
                         <p className="text-xs text-gray-600">
                           Romantik ve sıcak bir görünüm

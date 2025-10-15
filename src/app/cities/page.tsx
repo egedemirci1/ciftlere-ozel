@@ -58,62 +58,62 @@ export default function CitiesPage() {
     }`}>
       <Navigation />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2 sm:mb-4 px-2">
             Şehirlerimiz
           </h1>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 px-2">
             Aşkımla Gezdiğimiz Şehirler
           </p>
           
-          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-6 inline-block border ${
+          <div className={`bg-white/60 backdrop-blur-sm rounded-lg p-4 sm:p-6 inline-block border ${
             theme === 'green-theme' ? 'border-green-200' : 'border-pink-200'
           }`}>
             {isLoading ? (
               <div className="flex items-center justify-center space-x-2">
-                <MapPin className={`h-6 w-6 ${
+                <MapPin className={`h-5 w-5 sm:h-6 sm:w-6 ${
                   theme === 'green-theme' ? 'text-green-500' : 'text-pink-500'
                 }`} />
                 <div className="flex items-center space-x-2">
-                  <Loader2 className={`h-5 w-5 animate-spin ${
+                  <Loader2 className={`h-4 w-4 sm:h-5 sm:w-5 animate-spin ${
                     theme === 'green-theme' ? 'text-green-500' : 'text-pink-500'
                   }`} />
-                  <span className="text-lg font-medium text-gray-600">Şehirler hesaplanıyor...</span>
+                  <span className="text-base sm:text-lg font-medium text-gray-600">Şehirler hesaplanıyor...</span>
                 </div>
               </div>
             ) : (
               <div className="flex items-center justify-center space-x-2">
-                <MapPin className={`h-6 w-6 ${
+                <MapPin className={`h-5 w-5 sm:h-6 sm:w-6 ${
                   theme === 'green-theme' ? 'text-green-500' : 'text-pink-500'
                 }`} />
-                <span className="text-2xl font-bold text-gray-800">
+                <span className="text-xl sm:text-2xl font-bold text-gray-800">
                   {visitedCount}/81
                 </span>
-                <span className="text-gray-600">şehir ziyaret edildi</span>
+                <span className="text-gray-600 text-sm sm:text-base">şehir ziyaret edildi</span>
               </div>
             )}
           </div>
         </div>
 
         {isLoading ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
             {Array.from({ length: 12 }, (_, i) => (
               <Card key={i} className="bg-white/60 border-gray-200 animate-pulse">
-                <CardHeader className="p-3">
-                  <CardTitle className="text-center text-sm font-medium">
-                    <div className="h-6 bg-gray-200 rounded mb-2"></div>
-                    <div className="h-4 bg-gray-200 rounded"></div>
+                <CardHeader className="p-2 sm:p-3">
+                  <CardTitle className="text-center text-xs sm:text-sm font-medium">
+                    <div className="h-4 sm:h-6 bg-gray-200 rounded mb-1 sm:mb-2"></div>
+                    <div className="h-3 sm:h-4 bg-gray-200 rounded"></div>
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="p-2 pt-0">
-                  <div className="h-6 bg-gray-200 rounded"></div>
+                <CardContent className="p-1 sm:p-2 pt-0">
+                  <div className="h-4 sm:h-6 bg-gray-200 rounded"></div>
                 </CardContent>
               </Card>
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
             {CITIES.map((city) => {
               const isVisited = visitedCities.has(city.code.toString());
               const cityMemories = getCityMemories(city.code.toString());
@@ -131,26 +131,27 @@ export default function CitiesPage() {
                     }`}
                     onClick={() => {}}
                   >
-                    <CardHeader className="p-3">
-                      <CardTitle className="text-center text-sm font-medium">
-                        <div className="text-lg font-bold text-gray-600">
+                    <CardHeader className="p-2 sm:p-3">
+                      <CardTitle className="text-center text-xs sm:text-sm font-medium">
+                        <div className="text-sm sm:text-lg font-bold text-gray-600">
                           {city.code.toString().padStart(2, '0')}
                         </div>
-                        <div className="text-xs text-gray-700 mt-1">
+                        <div className="text-xs text-gray-700 mt-1 leading-tight">
                           {city.name}
                         </div>
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-2 pt-0">
+                    <CardContent className="p-1 sm:p-2 pt-0">
                       {isVisited && (
                         <div className="flex justify-center">
-                          <Badge variant="secondary" className={`text-xs ${
+                          <Badge variant="secondary" className={`text-xs px-1 sm:px-2 py-0.5 sm:py-1 ${
                             theme === 'green-theme' 
                               ? 'bg-green-200 text-green-800' 
                               : 'bg-pink-200 text-pink-800'
                           }`}>
-                            <Heart className="h-3 w-3 mr-1" />
-                            Ziyaret Edildi
+                            <Heart className="h-2 w-2 sm:h-3 sm:w-3 mr-0.5 sm:mr-1" />
+                            <span className="hidden sm:inline">Ziyaret Edildi</span>
+                            <span className="sm:hidden">✓</span>
                           </Badge>
                         </div>
                       )}

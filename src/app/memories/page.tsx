@@ -140,30 +140,30 @@ export default function MemoriesPage() {
     }`}>
       <Navigation />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Page Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2 sm:mb-4 px-2">
             Anılarımız
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-3">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-2 sm:mb-3 px-2">
             Birlikte Yaşadığımız Güzel Anlar
           </p>
-          <p className="text-base text-gray-500 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto px-2">
             Her anı, aşkımızın bir parçası
           </p>
         </div>
 
         {/* Add Memory Button */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <Dialog open={isNewMemoryOpen} onOpenChange={setIsNewMemoryOpen}>
             <DialogTrigger asChild>
               <Button className={`${
                 theme === 'green-theme' 
                   ? 'bg-green-500 hover:bg-green-600' 
                   : 'bg-pink-500 hover:bg-pink-600'
-              } text-white px-6 py-3`}>
-                <Plus className="h-5 w-5 mr-2" />
+              } text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base`}>
+                <Plus className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
                 Yeni Anı Ekle
               </Button>
             </DialogTrigger>
@@ -273,44 +273,44 @@ export default function MemoriesPage() {
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
               {currentMemories.map((memory) => (
                 <Card key={memory.id} className={`bg-white/60 backdrop-blur-sm ${
                   theme === 'green-theme' ? 'border-green-200' : 'border-pink-200'
                 }`}>
-                  <CardHeader>
+                  <CardHeader className="pb-3">
                     <CardTitle className="flex items-center justify-between">
-                      <span className="text-lg">{memory.title}</span>
-                      <div className="flex items-center space-x-2">
+                      <span className="text-base sm:text-lg pr-2">{memory.title}</span>
+                      <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
                         <Button
                           variant="ghost"
                           size="sm"
                           onClick={() => handleAddMediaToMemory(memory.id)}
-                          className={`hover:bg-blue-50 hover:text-blue-600 transition-colors`}
+                          className={`hover:bg-blue-50 hover:text-blue-600 transition-colors h-8 w-8 p-0`}
                         >
-                          <ImagePlus className="h-4 w-4" />
+                          <ImagePlus className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                         <Button
                           variant="ghost"
                           size="sm"
                           onClick={() => handleDeleteMemory(memory.id)}
                           disabled={deletingMemory === memory.id}
-                          className={`hover:bg-red-50 hover:text-red-600 transition-colors`}
+                          className={`hover:bg-red-50 hover:text-red-600 transition-colors h-8 w-8 p-0`}
                         >
-                          <Trash2 className={`h-4 w-4 ${
+                          <Trash2 className={`h-3 w-3 sm:h-4 sm:w-4 ${
                             deletingMemory === memory.id ? 'animate-spin' : ''
                           }`} />
                         </Button>
                       </div>
                     </CardTitle>
                     {memory.description && (
-                      <CardDescription>{memory.description}</CardDescription>
+                      <CardDescription className="text-sm">{memory.description}</CardDescription>
                     )}
-                    <div className="flex items-center space-x-2 text-sm text-gray-500">
-                      <Calendar className="h-4 w-4" />
+                    <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-500 mt-2">
+                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
                       <span>{new Date(memory.date).toLocaleDateString('tr-TR')}</span>
-                      <MapPin className="h-4 w-4 ml-2" />
-                      <span>{getCityName(memory.city_code)}</span>
+                      <MapPin className="h-3 w-3 sm:h-4 sm:w-4 ml-1 sm:ml-2" />
+                      <span className="truncate">{getCityName(memory.city_code)}</span>
                     </div>
                   </CardHeader>
                   {memory.media && memory.media.length > 0 && (

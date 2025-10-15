@@ -99,24 +99,24 @@ export default function SongsPage() {
     }`}>
       <Navigation />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2 sm:mb-4 px-2">
             Şarkılarımız
           </h1>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 px-2">
             Seni Hatırlatan Parçalar
           </p>
           
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
+          <div className="flex flex-wrap justify-center gap-2 mb-4 sm:mb-6">
             {categories.map((category) => (
               <Button
                 key={category.value}
                 variant={selectedCategory === category.value ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(category.value)}
-                className={`flex items-center space-x-2 transition-all duration-200 ${
+                className={`flex items-center space-x-1 sm:space-x-2 transition-all duration-200 text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2 ${
                   selectedCategory === category.value
                     ? theme === 'green-theme'
                       ? 'bg-green-500 hover:bg-green-600 text-white'
@@ -126,8 +126,9 @@ export default function SongsPage() {
                     : 'border-pink-300 text-pink-700 hover:bg-pink-50'
                 }`}
               >
-                <span className="text-lg">{category.icon}</span>
-                <span>{category.label}</span>
+                <span className="text-sm sm:text-lg">{category.icon}</span>
+                <span className="hidden sm:inline">{category.label}</span>
+                <span className="sm:hidden">{category.label.charAt(0)}</span>
               </Button>
             ))}
           </div>
@@ -138,8 +139,8 @@ export default function SongsPage() {
                 theme === 'green-theme' 
                   ? 'bg-green-500 hover:bg-green-600' 
                   : 'bg-pink-500 hover:bg-pink-600'
-              } text-white`}>
-                <Plus className="h-4 w-4 mr-2" />
+              } text-white px-3 sm:px-4 py-2 text-sm sm:text-base`}>
+                <Plus className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                 Yeni Şarkı Ekle
               </Button>
             </DialogTrigger>
@@ -248,24 +249,24 @@ export default function SongsPage() {
             </div>
             
             {/* Skeleton cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8 w-full">
               {[...Array(6)].map((_, i) => (
                 <Card key={i} className={`bg-white/60 backdrop-blur-sm animate-pulse ${
                   theme === 'green-theme' ? 'border-green-200' : 'border-pink-200'
                 }`}>
-                  <CardHeader>
-                    <div className="h-4 bg-gray-200 rounded"></div>
-                    <div className="h-3 bg-gray-200 rounded w-2/3"></div>
+                  <CardHeader className="pb-3">
+                    <div className="h-3 sm:h-4 bg-gray-200 rounded"></div>
+                    <div className="h-2 sm:h-3 bg-gray-200 rounded w-2/3"></div>
                   </CardHeader>
                   <CardContent>
-                    <div className="h-32 bg-gray-200 rounded"></div>
+                    <div className="h-24 sm:h-32 bg-gray-200 rounded"></div>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
         ) : songs.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {songs.map((song) => (
               <Card 
                 key={song.id} 
@@ -273,34 +274,35 @@ export default function SongsPage() {
                   theme === 'green-theme' ? 'border-green-200' : 'border-pink-200'
                 }`}
               >
-                <CardHeader>
+                <CardHeader className="pb-3">
                   <CardTitle className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <Music className={`h-5 w-5 ${
+                    <div className="flex items-center space-x-1 sm:space-x-2 pr-2">
+                      <Music className={`h-4 w-4 sm:h-5 sm:w-5 ${
                         theme === 'green-theme' ? 'text-green-500' : 'text-pink-500'
                       }`} />
-                      <span className="truncate">{song.title}</span>
+                      <span className="truncate text-sm sm:text-base">{song.title}</span>
                     </div>
                     <Button
                       variant="ghost"
                       size="sm"
                       onClick={() => handleDeleteSong(song.id)}
                       disabled={deletingSong === song.id}
-                      className="hover:bg-red-50 hover:text-red-600 transition-colors"
+                      className="hover:bg-red-50 hover:text-red-600 transition-colors h-8 w-8 p-0 flex-shrink-0"
                     >
-                      <Trash2 className={`h-4 w-4 ${
+                      <Trash2 className={`h-3 w-3 sm:h-4 sm:w-4 ${
                         deletingSong === song.id ? 'animate-spin' : ''
                       }`} />
                     </Button>
                   </CardTitle>
-                  <CardDescription className="flex items-center justify-between">
-                    <span>{song.artist}</span>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                  <CardDescription className="flex items-center justify-between text-xs sm:text-sm">
+                    <span className="truncate pr-2">{song.artist}</span>
+                    <span className={`px-1 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium flex-shrink-0 ${
                       theme === 'green-theme' 
                         ? 'bg-green-100 text-green-700' 
                         : 'bg-pink-100 text-pink-700'
                     }`}>
-                      {categories.find(cat => cat.value === song.category)?.icon} {categories.find(cat => cat.value === song.category)?.label}
+                      <span className="hidden sm:inline">{categories.find(cat => cat.value === song.category)?.icon} {categories.find(cat => cat.value === song.category)?.label}</span>
+                      <span className="sm:hidden">{categories.find(cat => cat.value === song.category)?.icon}</span>
                     </span>
                   </CardDescription>
                 </CardHeader>

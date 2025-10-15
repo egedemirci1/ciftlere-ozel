@@ -79,12 +79,12 @@ export default function LettersPage() {
     }`}>
       <Navigation />
       
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">
+      <main className="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-2 sm:mb-4 px-2">
             Mektuplarımız
           </h1>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 px-2">
             Arkadaşlar Bu Mektuplar Çok Gizli!
           </p>
           
@@ -94,8 +94,8 @@ export default function LettersPage() {
                 theme === 'green-theme' 
                   ? 'bg-green-500 hover:bg-green-600' 
                   : 'bg-pink-500 hover:bg-pink-600'
-              } text-white`}>
-                <Plus className="h-4 w-4 mr-2" />
+              } text-white px-3 sm:px-4 py-2 text-sm sm:text-base`}>
+                <Plus className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                 Yeni Mektup Yaz
               </Button>
             </DialogTrigger>
@@ -169,32 +169,32 @@ export default function LettersPage() {
             </div>
           </div>
         ) : letters.length > 0 ? (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {letters.map((letter) => (
               <Card key={letter.id} className={`bg-white/60 backdrop-blur-sm hover:shadow-lg transition-shadow ${
                 theme === 'green-theme' ? 'border-green-200' : 'border-pink-200'
               }`}>
-                <CardHeader>
+                <CardHeader className="pb-3">
                   <CardTitle className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <Mail className={`h-5 w-5 ${
+                    <div className="flex items-center space-x-1 sm:space-x-2 pr-2">
+                      <Mail className={`h-4 w-4 sm:h-5 sm:w-5 ${
                         theme === 'green-theme' ? 'text-green-500' : 'text-pink-500'
                       }`} />
-                      <span>{letter.title}</span>
+                      <span className="text-sm sm:text-base">{letter.title}</span>
                     </div>
                     <Button
                       variant="ghost"
                       size="sm"
                       onClick={() => handleDeleteLetter(letter.id)}
                       disabled={deletingLetter === letter.id}
-                      className="hover:bg-red-50 hover:text-red-600 transition-colors"
+                      className="hover:bg-red-50 hover:text-red-600 transition-colors h-8 w-8 p-0 flex-shrink-0"
                     >
-                      <Trash2 className={`h-4 w-4 ${
+                      <Trash2 className={`h-3 w-3 sm:h-4 sm:w-4 ${
                         deletingLetter === letter.id ? 'animate-spin' : ''
                       }`} />
                     </Button>
                   </CardTitle>
-                  <CardDescription>
+                  <CardDescription className="text-xs sm:text-sm">
                     {new Date(letter.created_at).toLocaleDateString('tr-TR', {
                       year: 'numeric',
                       month: 'long',
