@@ -32,10 +32,14 @@ export function StorageUsage() {
       
       // Frontend-only mockup storage data
       const mockupStorageData = {
-        usedSpace: 45678900, // ~43.5 MB
-        totalSpace: 524288000, // 500 MB
+        used: 45678900, // ~43.5 MB
+        usedGB: 0.0435,
+        limit: 524288000, // 500 MB
+        limitGB: 0.5,
+        usagePercentage: 8.7,
         fileCount: 12,
-        percentageUsed: 8.7
+        remaining: 478609100,
+        remainingGB: 0.4565
       };
 
       setStorageData(mockupStorageData);

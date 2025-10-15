@@ -33,9 +33,11 @@ export const mockupMemories = [
         file_name: 'memory1.jpg',
         original_name: 'karakoy-kahvalti.jpg',
         file_type: 'image/jpeg',
+        file_size: 2048576,
         public_url: 'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-03-15T10:00:00Z'
       }
     ]
   },
@@ -53,9 +55,11 @@ export const mockupMemories = [
         file_name: 'memory2.jpg',
         original_name: 'anitkabir.jpg',
         file_type: 'image/jpeg',
+        file_size: 1876543,
         public_url: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-03-22T14:30:00Z'
       }
     ]
   },
@@ -73,9 +77,11 @@ export const mockupMemories = [
         file_name: 'memory3.jpg',
         original_name: 'izmir-kordon.jpg',
         file_type: 'image/jpeg',
+        file_size: 2156789,
         public_url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-05-20T18:00:00Z'
       }
     ]
   },
@@ -93,9 +99,11 @@ export const mockupMemories = [
         file_name: 'memory4.jpg',
         original_name: 'kapadokya.jpg',
         file_type: 'image/jpeg',
+        file_size: 2234567,
         public_url: 'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-06-10T06:00:00Z'
       }
     ]
   },
@@ -113,9 +121,11 @@ export const mockupMemories = [
         file_name: 'memory5.jpg',
         original_name: 'antalya.jpg',
         file_type: 'image/jpeg',
+        file_size: 1987654,
         public_url: 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-09-01T12:00:00Z'
       }
     ]
   },
@@ -133,9 +143,11 @@ export const mockupMemories = [
         file_name: 'memory6.jpg',
         original_name: 'safranbolu.jpg',
         file_type: 'image/jpeg',
+        file_size: 1876543,
         public_url: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-09-20T10:00:00Z'
       }
     ]
   },
@@ -153,9 +165,11 @@ export const mockupMemories = [
         file_name: 'memory7.jpg',
         original_name: 'bursa.jpg',
         file_type: 'image/jpeg',
+        file_size: 1954321,
         public_url: 'https://images.unsplash.com/photo-1551582045-6ec9c11d8697?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-01-10T10:00:00Z'
       }
     ]
   },
@@ -173,9 +187,11 @@ export const mockupMemories = [
         file_name: 'memory8.jpg',
         original_name: 'bodrum.jpg',
         file_type: 'image/jpeg',
+        file_size: 2123456,
         public_url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-07-05T19:00:00Z'
       }
     ]
   },
@@ -193,9 +209,11 @@ export const mockupMemories = [
         file_name: 'memory9.jpg',
         original_name: 'konya.jpg',
         file_type: 'image/jpeg',
+        file_size: 1876543,
         public_url: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-04-15T14:00:00Z'
       }
     ]
   },
@@ -213,9 +231,11 @@ export const mockupMemories = [
         file_name: 'memory10.jpg',
         original_name: 'trabzon.jpg',
         file_type: 'image/jpeg',
+        file_size: 2034567,
         public_url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-06-20T11:00:00Z'
       }
     ]
   },
@@ -233,9 +253,11 @@ export const mockupMemories = [
         file_name: 'memory11.jpg',
         original_name: 'eskisehir.jpg',
         file_type: 'image/jpeg',
+        file_size: 1987654,
         public_url: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-05-10T16:00:00Z'
       }
     ]
   },
@@ -253,9 +275,11 @@ export const mockupMemories = [
         file_name: 'memory12.jpg',
         original_name: 'gaziantep.jpg',
         file_type: 'image/jpeg',
+        file_size: 2156789,
         public_url: 'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=800&q=80',
         width: 1920,
-        height: 1280
+        height: 1280,
+        created_at: '2024-08-15T13:00:00Z'
       }
     ]
   }
@@ -407,7 +431,32 @@ export const mockupMovie = {
   Writer: 'Richard Linklater, Kim Krizan',
   Actors: 'Ethan Hawke, Julie Delpy, Andrea Eckert',
   Plot: 'A young man and woman meet on a train in Europe, and wind up spending one evening together in Vienna. Unfortunately, both know that this will probably be their only night together.',
+  Language: 'English, German, French',
+  Country: 'USA, Austria, Switzerland',
+  Awards: 'Nominated for 1 Oscar. 2 wins & 6 nominations total',
   Poster: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80',
+  Ratings: [
+    {
+      Source: 'Internet Movie Database',
+      Value: '8.1/10'
+    },
+    {
+      Source: 'Rotten Tomatoes',
+      Value: '100%'
+    },
+    {
+      Source: 'Metacritic',
+      Value: '77/100'
+    }
+  ],
+  Metascore: '77',
   imdbRating: '8.1',
+  imdbVotes: '324,567',
+  imdbID: 'tt0112471',
+  Type: 'movie',
+  DVD: 'N/A',
+  BoxOffice: '$5,535,405',
+  Production: 'Castle Rock Entertainment',
+  Website: 'N/A',
   Response: 'True'
 };

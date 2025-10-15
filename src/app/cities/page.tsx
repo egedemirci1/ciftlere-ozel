@@ -18,7 +18,7 @@ interface Memory {
   id: string;
   title: string;
   date: string;
-  city_code: number;
+  city_code: string;
 }
 
 export default function CitiesPage() {
@@ -46,7 +46,7 @@ export default function CitiesPage() {
   const visitedCities = new Set(memories.map(memory => memory.city_code).filter(Boolean));
   const visitedCount = visitedCities.size;
 
-  const getCityMemories = (cityCode: number) => {
+  const getCityMemories = (cityCode: string) => {
     return memories.filter(memory => memory.city_code === cityCode);
   };
 
@@ -115,8 +115,8 @@ export default function CitiesPage() {
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {CITIES.map((city) => {
-              const isVisited = visitedCities.has(city.code);
-              const cityMemories = getCityMemories(city.code);
+              const isVisited = visitedCities.has(city.code.toString());
+              const cityMemories = getCityMemories(city.code.toString());
               
               return (
               <Sheet key={city.code}>
