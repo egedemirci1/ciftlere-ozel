@@ -96,18 +96,18 @@ export function Stats({ className = '' }: StatsProps) {
   }
 
   return (
-    <Card className={`bg-white/60 backdrop-blur-sm h-full flex flex-col ${
+    <Card className={`bg-white/60 backdrop-blur-sm flex flex-col ${
       theme === 'green-theme' ? 'border-green-200' : 'border-pink-200'
     } ${className}`}>
-      <CardHeader className="pb-3">
-        <CardTitle className="flex items-center space-x-2 text-base">
-          <BarChart3 className={`h-4 w-4 ${
+      <CardHeader className="pb-2 sm:pb-3">
+        <CardTitle className="flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base">
+          <BarChart3 className={`h-3 w-3 sm:h-4 sm:w-4 ${
             theme === 'green-theme' ? 'text-green-600' : 'text-pink-600'
           }`} />
           <span>İstatistikler</span>
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex-1 overflow-hidden p-3 pt-0">
+      <CardContent className="flex-1 overflow-hidden p-2 sm:p-3 pt-0">
         <div className="grid grid-cols-2 gap-1 h-full">
           <div className="text-center p-1 rounded bg-white/40">
             <Image className={`h-2.5 w-2.5 mx-auto ${

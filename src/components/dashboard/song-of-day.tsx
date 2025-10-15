@@ -117,23 +117,23 @@ export function SongOfDay({ className = '' }: SongOfDayProps) {
   }
 
   return (
-    <Card className={`bg-white/60 backdrop-blur-sm h-full flex flex-col ${
+    <Card className={`bg-white/60 backdrop-blur-sm flex flex-col ${
       theme === 'green-theme' ? 'border-green-200' : 'border-pink-200'
     } ${className}`}>
-      <CardHeader>
+      <CardHeader className="pb-2 sm:pb-3">
         <CardTitle className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Music className={`h-5 w-5 ${
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <Music className={`h-4 w-4 sm:h-5 sm:w-5 ${
               theme === 'green-theme' ? 'text-green-600' : 'text-pink-600'
             }`} />
-            <span>Günün Şarkısı</span>
+            <span className="text-sm sm:text-base">Günün Şarkısı</span>
           </div>
           <div className="flex items-center space-x-1">
             <Button
               variant="ghost"
               size="sm"
               onClick={handleRefreshSong}
-              className="text-xs hover:bg-gray-100"
+              className="text-xs hover:bg-gray-100 h-6 w-6 p-0"
               title="Yeni şarkı seç"
             >
               <RefreshCw className="h-3 w-3" />
@@ -142,27 +142,27 @@ export function SongOfDay({ className = '' }: SongOfDayProps) {
               variant="ghost"
               size="sm"
               onClick={() => window.location.href = '/songs'}
-              className="text-xs"
+              className="text-xs h-6 px-2"
             >
-              <Eye className="h-3 w-3 mr-1" />
-              Tümünü Gör
+              <Eye className="h-3 w-3 sm:mr-1" />
+              <span className="hidden sm:inline">Tümünü Gör</span>
             </Button>
           </div>
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="text-xs sm:text-sm">
           Günlük şarkı dozumuz
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 flex flex-col">
+      <CardContent className="flex-1 flex flex-col p-3 sm:p-6">
         {!songOfDay ? (
-          <div className="text-center py-6 flex-1 flex flex-col justify-center">
-            <Music className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-            <p className="text-gray-500 text-sm">Henüz şarkı eklenmemiş</p>
+          <div className="text-center py-4 sm:py-6 flex-1 flex flex-col justify-center">
+            <Music className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400 mx-auto mb-2" />
+            <p className="text-gray-500 text-xs sm:text-sm">Henüz şarkı eklenmemiş</p>
             <p className="text-gray-400 text-xs mt-1">İlk şarkınızı ekleyerek başlayın</p>
             <Button
               variant="outline"
               size="sm"
-              className="mt-3"
+              className="mt-2 sm:mt-3 text-xs sm:text-sm"
               onClick={() => window.location.href = '/songs'}
             >
               <Music className="h-3 w-3 mr-1" />
@@ -170,13 +170,13 @@ export function SongOfDay({ className = '' }: SongOfDayProps) {
             </Button>
           </div>
         ) : (
-          <div className="space-y-4 flex-1">
+          <div className="space-y-3 sm:space-y-4 flex-1">
             {/* Şarkı Thumbnail */}
             <div className="relative">
               <img
                 src={songOfDay.thumbnail_url}
                 alt={`${songOfDay.title} - ${songOfDay.artist}`}
-                className="w-full h-32 object-cover rounded-lg"
+                className="w-full h-20 sm:h-32 object-cover rounded-lg"
                 onError={(e) => {
                   console.log('Image failed to load:', songOfDay.thumbnail_url);
                   e.currentTarget.style.display = 'none';
@@ -184,8 +184,8 @@ export function SongOfDay({ className = '' }: SongOfDayProps) {
                   if (fallback) fallback.style.display = 'flex';
                 }}
               />
-              <div className="w-full h-32 bg-gray-200 rounded-lg flex items-center justify-center" style={{ display: 'none' }}>
-                <Music className="h-8 w-8 text-gray-400" />
+              <div className="w-full h-20 sm:h-32 bg-gray-200 rounded-lg flex items-center justify-center" style={{ display: 'none' }}>
+                <Music className="h-6 w-6 sm:h-8 sm:w-8 text-gray-400" />
               </div>
               <div className="absolute inset-0 bg-black/20 rounded-lg flex items-center justify-center">
                 <Button
@@ -195,23 +195,22 @@ export function SongOfDay({ className = '' }: SongOfDayProps) {
                     theme === 'green-theme' 
                       ? 'bg-green-500 hover:bg-green-600' 
                       : 'bg-pink-500 hover:bg-pink-600'
-                  } text-white`}
+                  } text-white h-6 w-6 sm:h-8 sm:w-8 p-0`}
                 >
-                  <Play className="h-4 w-4 mr-1" />
-                  Dinle
+                  <Play className="h-3 w-3 sm:h-4 sm:w-4" />
                 </Button>
               </div>
             </div>
 
             {/* Şarkı Bilgileri */}
-            <div className="space-y-2">
+            <div className="space-y-1 sm:space-y-2">
               <div>
-                <h4 className="font-medium text-gray-800 text-sm">{songOfDay.title}</h4>
+                <h4 className="font-medium text-gray-800 text-xs sm:text-sm">{songOfDay.title}</h4>
                 <p className="text-gray-600 text-xs">{songOfDay.artist}</p>
               </div>
               
               <div className="flex items-center justify-between">
-                <span className={`px-2 py-1 rounded-full text-xs ${
+                <span className={`px-1 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs ${
                   theme === 'green-theme' 
                     ? 'bg-green-100 text-green-700' 
                     : 'bg-pink-100 text-pink-700'

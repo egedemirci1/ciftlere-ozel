@@ -208,7 +208,7 @@ export function CitySuggestions({ className = '' }: CitySuggestionsProps) {
   }
 
   return (
-    <Card className={`bg-white/60 backdrop-blur-sm h-full flex flex-col ${
+    <Card className={`bg-white/60 backdrop-blur-sm flex flex-col ${
       theme === 'green-theme' ? 'border-green-200' : 'border-pink-200'
     } ${className}`}>
       <CardHeader>
