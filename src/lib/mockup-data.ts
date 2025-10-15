@@ -24,7 +24,7 @@ export const mockupMemories = [
     title: 'Karaköy\'de Kahvaltı',
     description: 'Cumartesi sabahı uyanıp karar verdik, hadi Karaköy\'e gidelim dedik. Köşe başındaki küçük kafede simit, menemen ve çaylarımızı içerken İstanbul\'un sabah huzurunu yaşadık.',
     date: '2024-03-15',
-    city_code: 34, // İstanbul
+    city_code: '34', // İstanbul
     album_id: null,
     created_at: '2024-03-15T10:00:00Z',
     media: [
@@ -44,7 +44,7 @@ export const mockupMemories = [
     title: 'Anıtkabir Ziyareti',
     description: 'Ankara\'dayken Anıtkabir\'i ziyaret ettik. Sessizliği, huzuru ve o muhteşem mimarisi bizi çok etkiledi. Özellikle gün batımında çektiğimiz fotoğraflar harika oldu.',
     date: getDateString(7),
-    city_code: 6, // Ankara
+    city_code: '6', // Ankara
     album_id: null,
     created_at: getISOString(7),
     media: [
@@ -64,7 +64,7 @@ export const mockupMemories = [
     title: 'Kordon\'da Yürüyüş',
     description: 'İzmir\'in o eşsiz Kordon yürüyüşü... Deniz kokusu, martıların sesleri ve el ele yürümek. Akşam üzeri kumruda oturup kumru yedik, sonra da sahil boyunca saatlerce gezindik.',
     date: '2024-05-20',
-    city_code: 35, // İzmir
+    city_code: '35', // İzmir
     album_id: null,
     created_at: '2024-05-20T18:00:00Z',
     media: [
@@ -84,7 +84,7 @@ export const mockupMemories = [
     title: 'Kapadokya Balayımız',
     description: 'Hayallerimizin Kapadokya gezisi! Balon turunda gün doğumunu izlemek, peri bacalarını gezmek, yeraltı şehrini keşfetmek... Her anı birbirimize sarılarak yaşadık.',
     date: '2024-06-10',
-    city_code: 50, // Nevşehir
+    city_code: '50', // Nevşehir
     album_id: null,
     created_at: '2024-06-10T06:00:00Z',
     media: [
@@ -104,7 +104,7 @@ export const mockupMemories = [
     title: 'Konyaaltı Plajı',
     description: 'Antalya\'nın o muhteşem denizi... Sahilde kumda oturup konuşmak, denize girmek, akşam yürüyüş yapmak. Tatil bu olsa gerek.',
     date: '2024-09-01',
-    city_code: 7, // Antalya
+    city_code: '7', // Antalya
     album_id: null,
     created_at: '2024-09-01T12:00:00Z',
     media: [
@@ -124,7 +124,7 @@ export const mockupMemories = [
     title: 'Safranbolu Gezisi',
     description: 'Tarihi evleri gezmek, dar sokaklarda kaybolmak, lokum almak, türk kahvesi içmek... Zamanın durduğu bir yer.',
     date: '2024-09-20',
-    city_code: 78, // Karabük
+    city_code: '78', // Karabük
     album_id: null,
     created_at: '2024-09-20T10:00:00Z',
     media: [
@@ -144,7 +144,7 @@ export const mockupMemories = [
     title: 'Bursa\'da Uludağ',
     description: 'Kış tatilimizde Uludağ\'a gittik. Kar yağışı altında yürümek, sıcak çaylar içmek... Unutulmaz bir hafta sonu.',
     date: '2024-01-10',
-    city_code: 16, // Bursa
+    city_code: '16', // Bursa
     album_id: null,
     created_at: '2024-01-10T10:00:00Z',
     media: [
@@ -164,7 +164,7 @@ export const mockupMemories = [
     title: 'Bodrum\'da Gün Batımı',
     description: 'Bodrum kalesinin önünde gün batımını izledik. Denizin mavisi, gökyüzünün turuncusu... Harika bir akşamdı.',
     date: '2024-07-05',
-    city_code: 48, // Muğla
+    city_code: '48', // Muğla
     album_id: null,
     created_at: '2024-07-05T19:00:00Z',
     media: [
@@ -184,7 +184,7 @@ export const mockupMemories = [
     title: 'Konya\'da Mevlana',
     description: 'Mevlana Müzesi\'ni gezmek, Konya\'nın manevi havasını hissetmek... Çok özel bir deneyimdi.',
     date: '2024-04-15',
-    city_code: 42, // Konya
+    city_code: '42', // Konya
     album_id: null,
     created_at: '2024-04-15T14:00:00Z',
     media: [
@@ -204,7 +204,7 @@ export const mockupMemories = [
     title: 'Trabzon\'da Sümela',
     description: 'Sümela Manastırı\'nı ziyaret ettik. Dağların arasındaki o muhteşem yapı... Doğa ve tarih bir arada.',
     date: '2024-06-20',
-    city_code: 61, // Trabzon
+    city_code: '61', // Trabzon
     album_id: null,
     created_at: '2024-06-20T11:00:00Z',
     media: [
@@ -224,7 +224,7 @@ export const mockupMemories = [
     title: 'Eskişehir\'de Porsuk',
     description: 'Porsuk Çayı kenarında yürümek, gondolla gezmek, sokak lezzetlerini tatmak... Eskişehir bizim için sürpriz oldu.',
     date: '2024-05-10',
-    city_code: 26, // Eskişehir
+    city_code: '26', // Eskişehir
     album_id: null,
     created_at: '2024-05-10T16:00:00Z',
     media: [
@@ -244,7 +244,7 @@ export const mockupMemories = [
     title: 'Gaziantep Mutfağı',
     description: 'Gaziantep\'te yemek turumuzu yaptık. Baklava, lahmacun, kebap... Her şey muhteşemdi. Mideyi doyuran değil, ruhu doyuran lezzetler.',
     date: '2024-08-15',
-    city_code: 27, // Gaziantep
+    city_code: '27', // Gaziantep
     album_id: null,
     created_at: '2024-08-15T13:00:00Z',
     media: [
